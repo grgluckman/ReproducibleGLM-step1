@@ -77,3 +77,6 @@ summary(titanic_all_numeric$body)
 
 caret::findCorrelation(cor(titanic_all_numeric[,-1]
       , use="pairwise.complete.obs"))
+      
+### scratch
+table(titanic_all[,c("survived","embarked")])
