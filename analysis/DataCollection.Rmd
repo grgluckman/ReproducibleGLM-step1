@@ -56,3 +56,5 @@ dbWriteTable(titanicdb, "titanic", head(titanic_all), append=TRUE)
 ```
 
 Restore your original data with your get_data.R file.
+
+
