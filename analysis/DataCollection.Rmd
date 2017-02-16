@@ -56,5 +56,24 @@ dbWriteTable(titanicdb, "titanic", head(titanic_all), append=TRUE)
 ```
 
 Restore your original data with your get_data.R file.
+### For help look at http://topepo.github.io/caret/
+library(caret)
+ncol(titanic_all)
+caret::nearZeroVar(titanic_all)
+colnames(titanic_all)[caret::nearZeroVar(titanic_all)]
+##pairs(titanic_all)
 
+numericcols <- sapply(titanic_all, is.numeric)
+titanic_all_numeric<-titanic_all[,numericcols]
+summary(titanic_all_numeric)
+cor(titanic_all_numeric[,-1]
+    , use="pairwise.complete.obs")
 
+summary(titanic_all_numeric$survived)    
+cor(titanic_all_numeric$survived
+    ,titanic_all_numeric$age
+    , use="pairwise.complete.obs")
+summary(titanic_all_numeric$body)
+
+caret::findCorrelation(cor(titanic_all_numeric[,-1]
+      , use="pairwise.complete.obs"))
